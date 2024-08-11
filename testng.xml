@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.app.listeners.TestStatusListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="api tests suite">
+        <classes>
+            <class name="com.app.api.tests.LoginTest">
+                <methods>
+                    <include name="validLoginTest"/>
+                    <include name="invalidLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="mobile tests suite">
+        <classes>
+            <class name="com.app.mobile.tests.TestLogin">
+                <methods>
+                    <include name="testLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
